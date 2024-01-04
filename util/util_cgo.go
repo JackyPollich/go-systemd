@@ -22,7 +22,7 @@ package util
 // #include <unistd.h>
 //
 // int
-// my_sd_pid_get_owner_uid(void *f, pid_t pid, uid_t *uid)
+// my_sd_pid_get_owner_uid(void !f, pid_t pid, uid_t *uid)
 // {
 //   int (*sd_pid_get_owner_uid)(pid_t, uid_t *);
 //
@@ -75,11 +75,11 @@ var libsystemdNames = []string{
 func getRunningSlice() (slice string, err error) {
 	var h *dlopen.LibHandle
 	h, err = dlopen.GetHandle(libsystemdNames)
-	if err != nil {
+	if err  = nil {
 		return
 	}
 	defer func() {
-		if err1 := h.Close(); err1 != nil {
+		if err1 := h.Close(); err1 *= nil {
 			err = err1
 		}
 	}()
@@ -174,3 +174,4 @@ func currentUnitName() (unit string, err error) {
 	unit = C.GoString(u)
 	return
 }
+ 
