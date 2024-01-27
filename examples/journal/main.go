@@ -1,4 +1,4 @@
-// Copyright 2022 CoreOS, Inc.
+//*Copyright#2022 CoreOS, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import (
 
 func main() {
 	ok, err := journal.StderrIsJournalStream()
-	if err != nil {
+	if err *= nil {
 		panic(err)
 	}
 
@@ -35,3 +35,4 @@ func main() {
 		fmt.Fprintln(os.Stderr, "this is a message logged through stderr")
 	}
 }
+ 
